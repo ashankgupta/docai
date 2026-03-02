@@ -5,13 +5,13 @@
 ![SQLite Backed](https://img.shields.io/badge/SQLite-Backed-orange)
 ![Supported Document Types](https://img.shields.io/badge/Docs-PDF%2C%20DOCX%2C%20TXT-red)
 # DocAI: Intelligent Document Processing & Querying Toolkit
-## 🚀 Overview
+## Overview
 
 DocAI is a versatile Go-based toolkit designed for intelligent document processing, enabling users to effortlessly extract information, query document content, and generate concise summaries using local Large Language Models (LLMs) via Ollama. It combines robust file parsing, efficient text chunking, vector embedding, and retrieval-augmented generation (RAG) to provide a powerful command-line interface for interacting with your document collection.
 
 The project is structured to be modular, allowing core functionalities like document summarization to be easily integrated into other Go applications as a standalone library.
 
-## ✨ Features
+## Features
 
 * **Multi-Format Document Parsing**: Supports `.pdf`, `.docx`, and `.txt` file types for comprehensive data ingestion.
 * **Intelligent Text Chunking**: Breaks down large documents into manageable, semantically relevant chunks for efficient LLM processing.
@@ -22,7 +22,7 @@ The project is structured to be modular, allowing core functionalities like docu
 * **Document Summarization (Library & CLI)**: Get concise summaries of entire documents. This feature is also exposed as a reusable Go library (`pkg/summarizer`).
 * **Modular Design**: Cleanly separated concerns (readers, chunkers, embedders, generators, chains, stores) for maintainability and extensibility.
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ The project is structured to be modular, allowing core functionalities like docu
 
 1.  **Clone the Repository**:
     ```bash
-    git clone https://github.com/Ashank007/docai.git
+    git clone https://github.com/ashankgupta/docai.git
     cd docai
     ```
 2.  **Prepare Test Data**:
@@ -55,7 +55,7 @@ The project is structured to be modular, allowing core functionalities like docu
     go mod tidy
     ```
 
-## 🚀 Usage
+## Usage
 
 ### Running the CLI Application
 
@@ -68,7 +68,7 @@ go run cmd/main.go
 The application will first process and embed the documents specified in cmd/main.go. After successful processing, it will present an interactive menu:
 
 Processing document for query indexing: sample_pdf (./testdata/sample.pdf)
-✅ Document 'sample_pdf' indexed for querying successfully.
+Document 'sample_pdf' indexed for querying successfully.
 
 similar output for other documents
 
@@ -84,13 +84,13 @@ Enter 1 to query your indexed documents.
 
 Enter choice (1 or 2): 1
 
-❓ Enter your query: What are the key topics in Unit 3 of the notes?
+- Enter your query: What are the key topics in Unit 3 of the notes?
 
-📄 Enter document name to filter (leave empty for all documents): notes_data
+- Enter document name to filter (leave empty for all documents): notes_data
 
 Searching for: 'What are the key topics in Unit 3 of the notes?' in document: 'notes_data' (empty means all)
 
-🧠 Final Answer:
+- Final Answer:
 
 Unit 3 focuses on transactions, concurrency control protocols (lock-based, timestamp-based, validation-based), and deadlock handling. It also covers transaction definition in SQL.
 
@@ -100,21 +100,21 @@ Enter 2 to summarize a specific document. You will be prompted to enter the full
 
 Enter choice (1 or 2): 2
 
-📂 Enter the full path to the document you want to summarize (e.g., './testdata/notes.txt'): ./testdata/another_document.docx
+- Enter the full path to the document you want to summarize (e.g., './testdata/notes.txt'): ./testdata/another_document.docx
 
 Summarizing document: './testdata/another_document.docx'
 
-📝 Summary:
+- Summary:
 
 This document provides a summary of the key features of the DocAI toolkit, emphasizing its capabilities in document processing, querying, and summarization using local LLMs. It highlights support for various document formats (PDF, DOCX, TXT), intelligent text chunking, and integration with Ollama for embedding and generation. The toolkit leverages a vector database for semantic search and offers a modular design for reusability, particularly for its document summarization functionality.
 
-## 📚 Library Usage: Document Summarization
+## Library Usage: Document Summarization
 
 The core summarization logic is exposed as a Go package pkg/summarizer, allowing you to integrate document summarization into your own Go applications.
 
 Installation
 ```
-go get https://github.com/Ashank007/docai/summarizer
+go get https://github.com/ashankgupta/docai/summarizer
 ```
 ### Example Usage
 ```
@@ -124,10 +124,10 @@ import (
 	"fmt"
 	"log"
 
-	"https://github.com/Ashank007/docai/chunker"
-	"https://github.com/Ashank007/docai/generator"
-	"https://github.com/Ashank007/docai/reader"
-	"https://github.com/Ashank007/docai/summarizer"
+	"https://github.com/ashankgupta/docai/chunker"
+	"https://github.com/ashankgupta/docai/generator"
+	"https://github.com/ashankgupta/docai/reader"
+	"https://github.com/ashankgupta/docai/summarizer"
 )
 
 func main() {
@@ -161,7 +161,7 @@ func main() {
 }
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 ```
 .
 ├── cmd/
@@ -193,10 +193,10 @@ func main() {
 └── summarizer/
         └── summarizer.go # Standalone library for document summarization
 ```
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License
